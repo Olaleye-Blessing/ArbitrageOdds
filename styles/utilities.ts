@@ -9,6 +9,7 @@ export const Utilities = createGlobalStyle`
 
         figure {
             margin-right: 0.5rem;
+            color: var(--black-1);
         }
     }
 

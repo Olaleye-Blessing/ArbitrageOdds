@@ -28,5 +28,16 @@ export const General = createGlobalStyle`
 
     button {
         outline: none;
+        background-color: transparent;
+        border: 0.1rem solid transparent;
+    }
+
+    a,
+    button {
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
     }
 `;
