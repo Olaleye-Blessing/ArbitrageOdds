@@ -4,6 +4,7 @@ import { device } from "../../styles/breakpoints";
 export const StyledNav = styled.nav`
     padding: 1.5rem 2rem;
     position: relative;
+    z-index: 900;
 
     a {
         color: var(--white);
