@@ -4,7 +4,9 @@ import AuthenticatedContainer from "../../components/Authenticated/Authenticated
 const statistics = () => {
     return (
         <>
-            <AuthenticatedContainer></AuthenticatedContainer>
+            <AuthenticatedContainer>
+                <p>dynamic statistics</p>
+            </AuthenticatedContainer>
         </>
     );
 };

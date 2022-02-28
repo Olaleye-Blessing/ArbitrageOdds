@@ -4,7 +4,9 @@ import AuthenticatedContainer from "../../components/Authenticated/Authenticated
 const transactions = () => {
     return (
         <>
-            <AuthenticatedContainer></AuthenticatedContainer>
+            <AuthenticatedContainer>
+                <p>dynamic transactions history</p>
+            </AuthenticatedContainer>
         </>
     );
 };
