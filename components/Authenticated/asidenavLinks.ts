@@ -1,17 +1,25 @@
-import { AiFillHome } from "react-icons/ai";
+import { DashboardMainSvg } from "../../Svgs/DashBaordMain";
+import { DashBoardOrder } from "../../Svgs/DashBoardOrder";
+import { DashBoardStats } from "../../Svgs/DashBoardStats";
+import { DashBoardTransactions } from "../../Svgs/DashBoardTransactions";
+import { Logout } from "../../Svgs/Logout";
 
 export const asidenavLinks = [
-    { text: "Dashboard", path: "/dashboard", Icon: AiFillHome },
-    { text: "Statistics", path: "/dashboard/statistics", Icon: AiFillHome },
-    { text: "Transactions", path: "/dashboard/transactions", Icon: AiFillHome },
+    { text: "Dashboard", path: "/dashboard", Icon: DashboardMainSvg },
+    { text: "Statistics", path: "/dashboard/statistics", Icon: DashBoardStats },
+    {
+        text: "Transactions",
+        path: "/dashboard/transactions",
+        Icon: DashBoardTransactions,
+    },
     {
         text: "Deposit | withdraw",
         path: "/dashboard/deposit",
-        Icon: AiFillHome,
+        Icon: DashBoardOrder,
     },
     {
         text: "Log Out",
-        Icon: AiFillHome,
+        Icon: Logout,
         onClick: () => {
             alert("log out");
         },

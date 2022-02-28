@@ -41,6 +41,12 @@ export const StyeldAuthContainer = styled.div`
                             color: black;
                             margin-right: 1rem;
                             padding-top: 0.3rem;
+                            display: inline-block;
+
+                            svg {
+                                width: 2.3rem;
+                                height: 2.3rem;
+                            }
                         }
 
                         &:nth-child(2) {
