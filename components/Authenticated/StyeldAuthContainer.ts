@@ -1,18 +1,36 @@
 import styled from "styled-components";
+import { device } from "../../styles/breakpoints";
 
 export const StyeldAuthContainer = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 4rem;
-    margin-top: 8rem;
-    /* background-color: red; */
+    gap: 2rem;
     min-height: calc(100vh - 14.6rem);
+    flex-direction: column;
+    position: relative;
+
+    .toggle__dashboard {
+        font-size: 2.5rem;
+        color: var(--primary);
+        color: var(--white);
+        margin-left: 2rem;
+    }
 
     .auth {
         &__aside {
             flex: 1;
-            max-width: max-content;
+            /* max-width: max-content; */
+            position: absolute;
+            top: 5rem;
+            left: -100%;
+            width: 100%;
+            background-color: var(--secondary);
+            transition: left 0.2s linear;
+
+            &.open {
+                left: 0;
+            }
 
             &--nav {
                 &-lists {
@@ -59,10 +77,9 @@ export const StyeldAuthContainer = styled.div`
 
         &__main {
             flex: 2;
-            background-color: var(--primary);
-            border-radius: 15px 0px 0px 0px;
+
             align-self: stretch;
-            padding: 10.2rem 13.7rem;
+            padding: 3rem 2rem;
 
             &--order {
                 margin-bottom: 6.5rem;
@@ -85,6 +102,33 @@ export const StyeldAuthContainer = styled.div`
                     display: block;
                     margin-bottom: 1.2rem;
                 }
+            }
+        }
+    }
+
+    @media screen and (${device.tablet}) {
+        margin-top: 8rem;
+        gap: 4rem;
+        flex-direction: row;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        .toggle__dashboard {
+            display: none;
+        }
+
+        .auth {
+            &__aside {
+                position: static;
+                flex: 1;
+                max-width: max-content;
+                width: auto;
+            }
+
+            &__main {
+                padding: 10.2rem 13.7rem;
+                border-radius: 15px 0px 0px 0px;
+                background-color: var(--primary);
             }
         }
     }
