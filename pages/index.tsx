@@ -1,7 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
-    return <>Home Page</>;
+    const router = useRouter();
+
+    useEffect(() => {
+        router.push("/signup");
+    }, []);
+
+    return <></>;
 };
 
 export default Home;
