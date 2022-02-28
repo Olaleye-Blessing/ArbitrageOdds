@@ -30,11 +30,13 @@ export const Utilities = createGlobalStyle`
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                gap: 2rem;
                 flex-wrap: wrap;
+                margin-bottom: 0;
+                column-gap: 2rem;
 
                 & > * {
                     flex: 1 1 20rem;
+                    margin-bottom: 2rem;
                 }
             }
         }
