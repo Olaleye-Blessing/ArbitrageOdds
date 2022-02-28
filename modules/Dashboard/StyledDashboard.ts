@@ -10,10 +10,16 @@ export const StyledDashBoard = styled.section`
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                flex-wrap: wrap;
+
+                & > * {
+                    flex-basis: 14rem !important;
+                }
             }
 
             &-head {
                 flex: 1;
+                width: max-content;
             }
 
             &-val {

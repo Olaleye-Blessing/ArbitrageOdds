@@ -46,7 +46,7 @@ export const StyeldAuthContainer = styled.div`
                     justify-content: flex-start;
                     display: block;
                     border-radius: 1rem;
-                    padding: 1.8rem 2rem;
+                    padding: 1rem 2rem;
                     width: max-content;
 
                     &.active {
@@ -57,7 +57,7 @@ export const StyeldAuthContainer = styled.div`
                         &:first-child {
                             font-size: 2rem;
                             color: black;
-                            margin-right: 1rem;
+                            margin-right: 3rem;
                             padding-top: 0.3rem;
                             display: inline-block;
 
@@ -126,9 +126,20 @@ export const StyeldAuthContainer = styled.div`
             }
 
             &__main {
-                padding: 10.2rem 13.7rem;
                 border-radius: 15px 0px 0px 0px;
                 background-color: var(--primary);
+            }
+        }
+    }
+
+    @media screen and (${device.laptop}) {
+        .auth {
+            &__aside {
+                padding-top: 8.5rem;
+            }
+
+            &__main {
+                padding: 8.2rem 13.7rem 3rem;
             }
         }
     }
