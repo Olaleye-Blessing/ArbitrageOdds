@@ -40,4 +40,14 @@ export const General = createGlobalStyle`
     ul {
         list-style: none;
     }
+
+    input[type='number'] {
+        -moz-appearance: textfield !important;
+        appearance: textfield !important;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+    }
 `;
