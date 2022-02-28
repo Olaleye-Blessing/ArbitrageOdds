@@ -12,5 +12,9 @@ export const StyledInput = styled.input`
     padding: 1.4rem 3.8rem 1.4rem 1.5rem;
     border: 0.1rem solid transparent;
     outline: none;
-    color: var(--white-2);
+    color: var(--white);
+
+    &::placeholder {
+        color: var(--white-2);
+    }
 `;
