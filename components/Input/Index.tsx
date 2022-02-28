@@ -1,4 +1,9 @@
-import { ChangeEventHandler, FC, HTMLInputTypeAttribute } from "react";
+import {
+    ChangeEventHandler,
+    FC,
+    HTMLInputTypeAttribute,
+    InputHTMLAttributes,
+} from "react";
 import { StyledInput } from "./StyledInput";
 
 interface IInput {
@@ -9,10 +14,13 @@ interface IInput {
     placeholder?: string;
     "aria-label": string;
     onChange: ChangeEventHandler<HTMLInputElement>;
+    others?: InputHTMLAttributes<HTMLInputElement>;
 }
 
 const Index: FC<IInput> = (props) => {
-    return <StyledInput {...props} />;
+    let otherProps = props.others;
+
+    return <StyledInput {...props} {...otherProps} />;
 };
 
 export default Index;

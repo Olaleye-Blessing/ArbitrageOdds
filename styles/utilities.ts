@@ -50,4 +50,14 @@ export const Utilities = createGlobalStyle`
             margin-left: auto;
         }
     }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
 `;
