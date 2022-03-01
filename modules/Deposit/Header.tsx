@@ -8,15 +8,15 @@ interface IHeader {
 const Header: FC<IHeader> = ({ handleChangeOrder }) => {
     return (
         <>
-            <header className="auth__main--order">
+            <header className="auth__main--order order__header">
                 <button
-                    className="btn auth__main--order-btn"
+                    className="btn auth__main--order-btn order__btn"
                     onClick={(e) => handleChangeOrder("deposit")}
                 >
                     Deposit
                 </button>
                 <button
-                    className="btn auth__main--order-btn"
+                    className="btn auth__main--order-btn order__btn"
                     onClick={(e) => handleChangeOrder("withdraw")}
                 >
                     Withdraw
