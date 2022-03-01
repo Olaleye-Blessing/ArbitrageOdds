@@ -35,6 +35,11 @@ export const General = createGlobalStyle`
     a,
     button {
         cursor: pointer;
+        transition: opacity 0.3s linear;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 
     ul {

@@ -3,6 +3,7 @@ import { device } from "../../../styles/breakpoints";
 
 export const StyledLoginPage = styled.main`
     margin-top: 4rem;
+    padding-bottom: 3rem;
 
     form,
     .dynamic {
@@ -49,6 +50,51 @@ export const StyledLoginPage = styled.main`
         }
     }
 
+    .dynamic {
+        max-width: 70rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .splide {
+        &__track {
+        }
+
+        &__pagination {
+            padding-bottom: 1rem;
+        }
+    }
+
+    .roi {
+        font-family: var(--font-pri);
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(187, 167, 115, 0.75);
+        border-radius: 15px 0px 0px 0px;
+        padding: 3rem 1rem 3rem;
+
+        &__head {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        &__p {
+            color: var(--white-1);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        &__val {
+            display: inline-block;
+            padding-left: 1rem;
+        }
+    }
+
     @media screen and (${device.tablet}) {
         margin-top: 12rem;
         display: flex;
@@ -61,6 +107,31 @@ export const StyledLoginPage = styled.main`
 
         section {
             flex: 1;
+        }
+    }
+
+    @media screen and (${device.laptop}) {
+        align-items: center;
+
+        form {
+            max-width: 34rem;
+        }
+
+        .roi {
+            padding-top: 5.6rem;
+
+            &__head {
+                margin-bottom: 7.7rem;
+                font-size: 3rem;
+            }
+
+            &__p {
+                font-size: 4rem;
+                margin-bottom: 4rem;
+            }
+
+            &__val {
+            }
         }
     }
 `;
