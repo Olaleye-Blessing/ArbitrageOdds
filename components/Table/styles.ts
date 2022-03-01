@@ -13,6 +13,8 @@ export const StyledTable = styled.table`
 
     thead {
         th {
+            color: var(--white-1);
+
             &:nth-child(1) {
                 width: 30%;
             }

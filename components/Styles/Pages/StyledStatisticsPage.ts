@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { device } from "../../../styles/breakpoints";
 
-export const StyledTransactionPage = styled.main`
-    .transactions {
+export const StyledStatisticsPage = styled.main`
+    .statistics {
         &__date {
             display: flex;
             align-items: center;
@@ -19,52 +19,47 @@ export const StyledTransactionPage = styled.main`
                 margin-left: 3.4rem;
                 font-size: 1.4rem;
             }
-
-            &--from {
-            }
-
-            &--to {
-            }
         }
 
-        &__chart {
-            max-width: 30rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-right: auto;
-            margin-left: auto;
-            margin-top: 4rem;
-            background-color: var(--primary);
-
-            &--pie {
-            }
+        &__sec {
         }
 
-        &__indicators {
-            margin-top: 1rem;
+        &__rois {
+            margin-top: 2rem;
+        }
 
-            &--item {
+        &__roi {
+            &-fig {
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                margin-bottom: 2rem;
                 font-weight: 700;
                 font-style: italic;
-                font-size: 1.6rem;
+            }
 
-                &-square {
-                    display: inline-block;
-                    width: 1rem;
-                    height: 1rem;
-                    margin-right: 1.6rem;
-                }
+            &-head {
+                text-align: center;
+            }
+
+            &-circle {
+                width: 15.8rem;
+                height: 15.8rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3.6rem;
+                background: rgba(196, 196, 196, 0.3);
+                color: var(--secondary);
+                margin-top: 0.4rem;
             }
         }
     }
 
     @media screen and (${device.tablet}) {
-        .transactions {
+        .statistics {
             &__date {
                 &--from,
                 &--to {
@@ -82,7 +77,7 @@ export const StyledTransactionPage = styled.main`
         padding-left: 4rem !important;
         padding-right: 4rem !important;
 
-        .transactions {
+        .statistics {
             &__sec {
                 display: flex;
                 align-items: center;
@@ -90,8 +85,8 @@ export const StyledTransactionPage = styled.main`
                 column-gap: 3rem;
             }
 
-            &__indicators {
-                margin-top: 10rem;
+            &__rois {
+                flex: 1 1 35rem;
             }
         }
     }
