@@ -2,9 +2,10 @@ import { FC } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import ROI from "./ROI";
+import Review from "./Review";
 
 const Slider: FC = () => {
-    let sliderItems = [ROI, ROI, ROI];
+    let sliderItems = [Review, ROI, ROI];
 
     return (
         <section className="dynamic">

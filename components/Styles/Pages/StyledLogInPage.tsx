@@ -95,6 +95,31 @@ export const StyledLoginPage = styled.main`
         }
     }
 
+    .review {
+        background-color: var(--primary);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &__text {
+            margin-bottom: 1rem;
+            font-weight: bold;
+            max-width: 40rem;
+        }
+
+        &__author {
+            font-weight: bolder;
+            color: var(--secondary);
+            font-style: italic;
+            font-size: 2rem;
+        }
+    }
+
     @media screen and (${device.tablet}) {
         margin-top: 12rem;
         display: flex;
