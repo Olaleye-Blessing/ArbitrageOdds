@@ -158,5 +158,12 @@ export const StyledLoginPage = styled.main`
             &__val {
             }
         }
+
+        .review {
+            &__text {
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
+            }
+        }
     }
 `;
