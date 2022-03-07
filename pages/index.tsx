@@ -7,7 +7,7 @@ const Home: NextPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        router.push("/signup");
+        router.push("/login");
     }, []);
 
     return <></>;
