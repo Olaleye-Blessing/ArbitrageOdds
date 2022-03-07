@@ -14,6 +14,8 @@ const Slider: FC = () => {
                     rewind: true,
                     gap: "1rem",
                     arrows: false,
+                    autoplay: true,
+                    interval: 15 * 1_000, // 15 secs
                 }}
             >
                 {sliderItems.map((Item, i) => (
