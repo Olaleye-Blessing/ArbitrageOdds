@@ -28,7 +28,7 @@ export const Utilities = createGlobalStyle`
 
             &-flex {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: space-between;
                 flex-wrap: wrap;
                 margin-bottom: 0;
@@ -38,6 +38,15 @@ export const Utilities = createGlobalStyle`
                     flex: 1 1 20rem;
                     margin-bottom: 2rem;
                 }
+            }
+        }
+
+        &__input {
+            &--error {
+                color: brown;
+                font-size: 1.5rem;
+                padding-left: 0.2rem;
+                display: block;
             }
         }
 

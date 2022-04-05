@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
+import Notifications from "../components/Notifications/Index";
+import { AuthProvider } from "../context/AuthContext";
 import { General } from "../styles/General";
 import { Normalize } from "../styles/Normalize";
 import { Utilities } from "../styles/utilities";
@@ -12,9 +14,12 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Normalize />
             <General />
             <Utilities />
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <Notifications />
+            <AuthProvider>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </AuthProvider>
         </>
     );
 }

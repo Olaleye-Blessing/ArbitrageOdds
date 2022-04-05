@@ -14,6 +14,13 @@ export const General = createGlobalStyle`
         box-sizing: inherit;
     }
 
+    * {
+        &:disabled {
+            background-color: gray !important;
+            cursor: not-allowed;
+        }
+    }
+
     body {
         line-height: 1.5;
         font-family: var(--font-gen);
