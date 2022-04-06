@@ -3,12 +3,13 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import ROI from "./ROI";
 import Review from "./Review";
+import { StyledSliderSection } from "./Styles";
 
 const Slider: FC = () => {
     let sliderItems = [Review, ROI, ROI];
 
     return (
-        <section className="dynamic">
+        <StyledSliderSection className="dynamic">
             <Splide
                 options={{
                     rewind: true,
@@ -24,7 +25,7 @@ const Slider: FC = () => {
                     </SplideSlide>
                 ))}
             </Splide>
-        </section>
+        </StyledSliderSection>
     );
 };
 

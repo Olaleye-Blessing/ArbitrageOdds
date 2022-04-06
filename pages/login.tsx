@@ -1,8 +1,7 @@
 import { NextPage } from "next";
-import { ChangeEventHandler, useState } from "react";
 import { StyledLoginPage } from "../components/Styles/Pages/StyledLogInPage";
 import Form from "../modules/LogIn/Form";
-import Slider from "../modules/LogIn/Slider";
+import Slider from "../modules/Auth/Slider";
 
 const LogIn: NextPage = () => {
     return (
