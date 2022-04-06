@@ -8,6 +8,7 @@ interface IAuth {
     setUser: Dispatch<any>;
     setAuthTokens: Dispatch<any>;
     handleAuthenticating: (val: boolean) => void;
+    logout: () => void;
 }
 
 export const AuthContext = createContext<IAuth | undefined>(undefined);
@@ -30,8 +31,8 @@ export const AuthProvider: FC = ({ children }) => {
                 user = JSON.parse(localUser!);
             console.log({ authToken, user });
 
-            // setAuthTokens(authToken);
-            // setUser(jwtDecode(authToken.access));
+            setAuthTokens(authToken);
+            setUser(user);
         } else {
             setAuthTokens(null);
             setUser(null);
@@ -41,7 +42,8 @@ export const AuthProvider: FC = ({ children }) => {
     }, []);
 
     const logout = () => {
-        localStorage.removeItem("authTokens");
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("user");
         setAuthTokens(null);
         setUser(null);
     };
@@ -55,7 +57,7 @@ export const AuthProvider: FC = ({ children }) => {
                 authTokens,
                 setUser,
                 setAuthTokens,
-                // logout,
+                logout,
             }}
         >
             {children}

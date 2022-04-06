@@ -2,6 +2,7 @@ import AuthenticatedContainer from "../../components/Authenticated/Authenticated
 import { StyledDashBoard } from "../../modules/Dashboard/StyledDashboard";
 import { FaCopy } from "react-icons/fa";
 import { MdDoubleArrow } from "react-icons/md";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const Dashboard = () => {
     const options = [
@@ -56,4 +57,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default ProtectedRoute(Dashboard);

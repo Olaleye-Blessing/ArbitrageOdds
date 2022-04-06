@@ -5,8 +5,10 @@ import { navLinks } from "./navLinks";
 import { StyledNav } from "./Styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useRouter } from "next/router";
+import { useAuth } from "../../hooks/useAuth";
 
 const Index: FC = () => {
+    const { user, logout } = useAuth();
     const { pathname } = useRouter();
     const mobileToggleBtn = useRef<HTMLButtonElement>(null);
     const mobileContainer = useRef<HTMLDivElement>(null);
@@ -47,9 +49,18 @@ const Index: FC = () => {
                             </li>
                         ))}
                     </ul>
-                    <Link href={"/login"}>
-                        <a>Log In</a>
-                    </Link>
+                    {user ? (
+                        <button
+                            className="btn nav__btn--logout"
+                            onClick={logout}
+                        >
+                            Log out
+                        </button>
+                    ) : (
+                        <Link href={"/login"}>
+                            <a>Log In</a>
+                        </Link>
+                    )}
                 </div>
             </div>
         </StyledNav>

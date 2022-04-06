@@ -49,6 +49,13 @@ export const StyledNav = styled.nav`
         &__list {
             margin-bottom: 2rem;
         }
+
+        &__btn {
+            &--logout {
+                background-color: var(--primary);
+                color: var(--white-1);
+            }
+        }
     }
 
     @media screen and (${device.tablet}) {

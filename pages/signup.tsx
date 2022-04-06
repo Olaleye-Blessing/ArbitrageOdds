@@ -1,13 +1,12 @@
 import { useFormik } from "formik";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as Yup from "yup";
+import toast from "react-hot-toast";
+
 import { StyledSignUpPage } from "../components/Styles/StyledSignUpPage";
 import Input from "./../components/Input/Index";
-import * as Yup from "yup";
-import { base_url, routes } from "../services";
-import { useState } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
-import { useRouter } from "next/router";
 import { SignUpDetails } from "../typescript/interface";
 import { signup } from "../utils/auth";
 
@@ -52,7 +51,6 @@ const SignUp: NextPage = () => {
 
             try {
                 await signup(values);
-                toast.success("Account created successfully.");
                 push("/login");
             } catch (error) {
                 if (error instanceof Error) {

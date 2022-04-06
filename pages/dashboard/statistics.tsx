@@ -1,5 +1,6 @@
 import React from "react";
 import AuthenticatedContainer from "../../components/Authenticated/AuthenticatedContainer";
+import ProtectedRoute from "../../components/ProtectedRoute";
 import { StyledStatisticsPage } from "../../components/Styles/Pages/StyledStatisticsPage";
 import Table from "../../components/Table/Index";
 
@@ -63,4 +64,4 @@ const statistics = () => {
     );
 };
 
-export default statistics;
+export default ProtectedRoute(statistics);

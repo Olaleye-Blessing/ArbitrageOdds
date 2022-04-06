@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { FC, useState } from "react";
 
 import AuthenticatedContainer from "../../components/Authenticated/AuthenticatedContainer";
+import ProtectedRoute from "../../components/ProtectedRoute";
 import { StyledDepositPage } from "../../components/Styles/Pages/Deposit";
 import DepositOrder from "../../modules/Deposit/DepositOrder";
 import Header from "../../modules/Deposit/Header";
@@ -33,4 +34,4 @@ const Deposit: NextPage = () => {
     );
 };
 
-export default Deposit;
+export default ProtectedRoute(Deposit);

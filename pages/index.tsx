@@ -2,15 +2,16 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const Home: NextPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        router.push("/login");
+        router.replace("/dashboard");
     }, []);
 
     return <></>;
 };
 
-export default Home;
+export default ProtectedRoute(Home);

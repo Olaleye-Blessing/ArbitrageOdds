@@ -17,7 +17,7 @@ export interface Values {
 type ShowError = (field: keyof Values, returnSpan?: boolean) => {};
 
 const Form: FC = () => {
-    let { push } = useRouter();
+    let { push, query } = useRouter();
     let { setUser, setAuthTokens } = useAuth();
     const [submitting, setSubmitting] = useState(false);
     const formik = useFormik<Values>({
@@ -39,9 +39,9 @@ const Form: FC = () => {
 
             try {
                 await login(values, setUser, setAuthTokens);
-                toast.success("Successfully logged in.");
+                let redirectPath = query.redirect ?? "/dashboard";
 
-                push("/dashboard");
+                push(redirectPath as string);
             } catch (error) {
                 if (error instanceof Error) {
                     toast.error(error.message);

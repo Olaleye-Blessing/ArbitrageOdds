@@ -3,6 +3,7 @@ import AuthenticatedContainer from "../../components/Authenticated/Authenticated
 import { StyledTransactionPage } from "../../components/Styles/Pages/Transactons";
 import Table from "../../components/Table/Index";
 import { PieChart } from "react-minimal-pie-chart";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const Transactions: NextPage = () => {
     const tableHeader = ["DATE", "TYPE", "AMOUNT"];
@@ -66,4 +67,4 @@ const Transactions: NextPage = () => {
     );
 };
 
-export default Transactions;
+export default ProtectedRoute(Transactions);

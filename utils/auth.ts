@@ -1,4 +1,5 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
+import toast from "react-hot-toast";
 import { Values } from "../modules/LogIn/Form";
 import { base_url, routes } from "../services";
 import { SignUpDetails, SuccessResponse } from "../typescript/interface";
@@ -22,6 +23,7 @@ export const login = async (
             `${base_url}${routes.LOG_IN}`,
             values
         );
+        toast.success("Successfully logged in.");
 
         const { token, user } = data;
         setUser(user);
@@ -53,6 +55,7 @@ export const signup = async (values: SignUpDetails) => {
         };
 
         await axios.post(`${base_url}${routes.SIGN_UP}`, body);
+        toast.success("Account created successfully.");
     } catch (error) {
         let errorMessage = "";
 

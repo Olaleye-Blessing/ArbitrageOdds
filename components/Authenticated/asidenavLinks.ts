@@ -20,8 +20,5 @@ export const asidenavLinks = [
     {
         text: "Log Out",
         Icon: Logout,
-        onClick: () => {
-            alert("log out");
-        },
     },
 ];
