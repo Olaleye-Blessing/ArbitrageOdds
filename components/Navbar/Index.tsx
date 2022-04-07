@@ -51,14 +51,14 @@ const Index: FC = () => {
                     </ul>
                     {user ? (
                         <button
-                            className="btn nav__btn--logout"
+                            className="btn nav__btn--logout nav__auth"
                             onClick={logout}
                         >
                             Log out
                         </button>
                     ) : (
                         <Link href={"/login"}>
-                            <a>Log In</a>
+                            <a className="btn nav__auth">Log In</a>
                         </Link>
                     )}
                 </div>

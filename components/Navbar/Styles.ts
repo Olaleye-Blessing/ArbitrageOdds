@@ -50,6 +50,11 @@ export const StyledNav = styled.nav`
             margin-bottom: 2rem;
         }
 
+        &__auth {
+            margin-bottom: 2rem;
+            padding: 0;
+        }
+
         &__btn {
             &--logout {
                 background-color: var(--primary);
@@ -82,6 +87,10 @@ export const StyledNav = styled.nav`
 
             &__list {
                 margin: 0;
+            }
+
+            &__auth {
+                margin-bottom: 0rem;
             }
         }
     }
