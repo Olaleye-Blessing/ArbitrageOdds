@@ -11,6 +11,14 @@ export const Utilities = createGlobalStyle`
             margin-right: 0.5rem;
             color: var(--black-1);
         }
+
+        span {
+            display: inline-block;
+            margin-top: -0.5rem;
+            font-size: clamp(1.5rem, calc(1.5rem + 0.5vw), 2rem);
+            font-weight: 500;
+            padding-left: 0.3rem;
+        }
     }
 
     .container {
