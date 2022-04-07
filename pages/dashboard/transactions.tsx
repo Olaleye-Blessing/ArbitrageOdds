@@ -4,6 +4,7 @@ import { StyledTransactionPage } from "../../components/Styles/Pages/Transactons
 import Table from "../../components/Table/Index";
 import { PieChart } from "react-minimal-pie-chart";
 import ProtectedRoute from "../../components/ProtectedRoute";
+import Head from "next/head";
 
 const Transactions: NextPage = () => {
     const tableHeader = ["DATE", "TYPE", "AMOUNT"];
@@ -24,6 +25,9 @@ const Transactions: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Transactions | Arbitrageodds</title>
+            </Head>
             <AuthenticatedContainer>
                 <StyledTransactionPage className="auth__main">
                     <header>

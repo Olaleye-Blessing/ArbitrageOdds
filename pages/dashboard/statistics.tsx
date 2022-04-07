@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import AuthenticatedContainer from "../../components/Authenticated/AuthenticatedContainer";
 import ProtectedRoute from "../../components/ProtectedRoute";
@@ -27,6 +28,9 @@ const statistics = () => {
 
     return (
         <>
+            <Head>
+                <title>Statistics | Arbitrageodds</title>
+            </Head>
             <AuthenticatedContainer>
                 <StyledStatisticsPage className="auth__main">
                     <header>

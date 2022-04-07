@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import { FC, useState } from "react";
 
 import AuthenticatedContainer from "../../components/Authenticated/AuthenticatedContainer";
@@ -19,6 +20,9 @@ const Deposit: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Deposit | Arbitrageodds</title>
+            </Head>
             <AuthenticatedContainer>
                 <StyledDepositPage className="auth__main">
                     {!order ? (
