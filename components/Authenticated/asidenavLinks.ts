@@ -14,7 +14,7 @@ export const asidenavLinks = [
     },
     {
         text: "Deposit | withdraw",
-        path: "/dashboard/deposit",
+        path: "/dashboard/order",
         Icon: DashBoardOrder,
     },
     {
