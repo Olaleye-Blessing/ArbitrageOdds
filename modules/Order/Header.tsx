@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Order } from "../../pages/dashboard/deposit";
+import { Order } from "../../pages/dashboard/order";
 
 interface IHeader {
     handleChangeOrder: (order: Order) => void;

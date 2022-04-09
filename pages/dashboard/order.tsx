@@ -5,9 +5,9 @@ import { FC, useState } from "react";
 import AuthenticatedContainer from "../../components/Authenticated/AuthenticatedContainer";
 import ProtectedRoute from "../../components/ProtectedRoute";
 import { StyledDepositPage } from "../../components/Styles/Pages/Deposit";
-import DepositOrder from "../../modules/Deposit/DepositOrder";
-import Header from "../../modules/Deposit/Header";
-import WithdrawOrder from "../../modules/Deposit/WithdrawOrder";
+import DepositOrder from "../../modules/Order/DepositOrder";
+import Header from "../../modules/Order/Header";
+import WithdrawOrder from "../../modules/Order/WithdrawOrder";
 
 export type Order = null | "withdraw" | "deposit";
 

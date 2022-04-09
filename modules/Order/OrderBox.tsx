@@ -1,5 +1,5 @@
 import React, { FC, FormEventHandler, useState } from "react";
-import { Order } from "../../pages/dashboard/deposit";
+import { Order } from "../../pages/dashboard/order";
 import { StyledOrderBox } from "./StyledOrderBox";
 import Input from "./../../components/Input/Index";
 
