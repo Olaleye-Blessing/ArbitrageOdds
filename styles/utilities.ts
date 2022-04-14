@@ -78,5 +78,6 @@ export const Utilities = createGlobalStyle`
         display: inline-block;
         padding: 1rem;
         border-radius: 1rem;
+        transition: all 0.2s ease-in;
     }
 `;
