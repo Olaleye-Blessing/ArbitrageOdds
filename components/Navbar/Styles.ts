@@ -50,9 +50,12 @@ export const StyledNav = styled.nav`
             margin-bottom: 2rem;
         }
 
+        &__links {
+        }
+
         &__auth {
             margin-bottom: 2rem;
-            padding: 0;
+            /* padding: 0; */
         }
 
         &__btn {

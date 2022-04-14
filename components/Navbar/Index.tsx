@@ -44,7 +44,9 @@ const Index: FC = () => {
                         {navLinks.map((link) => (
                             <li key={link.text} className="nav__list">
                                 <Link href={link.path}>
-                                    <a className="nav__links">{link.text}</a>
+                                    <a className="nav__links btn">
+                                        {link.text}
+                                    </a>
                                 </Link>
                             </li>
                         ))}
