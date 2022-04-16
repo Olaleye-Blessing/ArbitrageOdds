@@ -6,7 +6,7 @@ import {
 } from "react";
 import { StyledInput } from "./StyledInput";
 
-interface IInput {
+export interface IInput {
     type?: HTMLInputTypeAttribute;
     name: string;
     id: string;

@@ -1,9 +1,17 @@
-import React, { FC, FormEventHandler, useState } from "react";
+import {
+    ChangeEventHandler,
+    FC,
+    FormEventHandler,
+    MouseEventHandler,
+    useState,
+} from "react";
 import { Order } from "../../pages/dashboard/order";
 import { StyledOrderBox } from "./StyledOrderBox";
-import Input from "./../../components/Input/Index";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
+import InputLabel from "../../components/Input/InputLabel";
+import DefaultInput from "../../components/Input/DefaultInput";
+import { copyToClipBoard } from "../../utils/copytoClipboard";
 
 interface IOrderBox {
     order: Order;
@@ -11,14 +19,34 @@ interface IOrderBox {
 
 const OrderBox: FC<IOrderBox> = ({ order }) => {
     const { back } = useRouter();
-    const [value, setValue] = useState("");
+    const [values, setValues] = useState({
+        hash: "",
+        amount: "",
+    });
+
+    const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+        let { name, value } = e.target;
+        setValues({ ...values, [name]: value });
+    };
+
+    const address = "TQdposcciLNWoi46jhohwrRKjUcXjNGeiB";
+
+    const handleCopy: MouseEventHandler<HTMLButtonElement> = async () => {
+        try {
+            await copyToClipBoard(address);
+            toast.success("Address copied to clipboard!");
+        } catch (error) {
+            toast.error("Failed to copy address to clipboard!");
+        }
+    };
 
     const handleOrder: FormEventHandler = (e) => {
         e.preventDefault();
-        if (!value) return toast.error(`Please, input an amount!`);
+        if (!values.hash && !values.amount)
+            return toast.error("Please fill all fields");
 
-        toast.success(`amount to ${order}: ${value}`);
-        setValue("");
+        toast.success(`amount to ${order}: ${values.amount}`);
+        setValues({ hash: "", amount: "" });
     };
 
     let suggestedAmount = [30, 50, 100, 500, 1_000, 5_000, 10_000, 50_000];
@@ -39,23 +67,24 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
                 <p className="order__channel">
                     {order} Channel: <span>USDT</span>
                 </p>
-                <div className="form__control order__form--control">
-                    <label htmlFor={order!} className="order__form--label">
-                        USDT Top-up
-                    </label>
-                    <Input
-                        others={{ className: "order__form-input" }}
-                        type="number"
-                        id={order!}
-                        name={order!}
-                        onChange={(e) => {
-                            setValue(e.target.value);
-                        }}
-                        value={value}
-                        placeholder="* Please input the number of USDT to be traded"
-                        aria-label={`amount to ${order}`}
-                    />
-                </div>
+                <InputLabel
+                    label="USDT"
+                    labelClassName="order__form--label"
+                    others={{ className: "order__form-input" }}
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    onChange={(e) => {
+                        if (!Number(e.target.value)) {
+                            return toast.error("Only numbers are allowed");
+                        }
+                        handleChange(e);
+                    }}
+                    value={values.amount}
+                    placeholder={`*Please input the number of USDT to ${order}`}
+                    aria-label={`amount to ${order}`}
+                />
+
                 <ul className="order__suggested--ul">
                     {suggestedAmount.map((amount) => (
                         <li key={amount} className="order__suggested--li">
@@ -63,7 +92,10 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
                                 className="btn order__suggested--btn"
                                 type="button"
                                 onClick={() =>
-                                    setValue(amount as unknown as string)
+                                    setValues((prev) => ({
+                                        ...prev,
+                                        amount: amount as unknown as string,
+                                    }))
                                 }
                             >
                                 {amount}
@@ -71,6 +103,47 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
                         </li>
                     ))}
                 </ul>
+
+                <div className="form__control order__receiver">
+                    <DefaultInput
+                        label="Receiver's address"
+                        labelClassName="order__form--label"
+                        others={{ className: "order__form-input" }}
+                        type="text"
+                        id="receiver"
+                        name="receiver"
+                        defaultValue={address}
+                    />
+                    <button
+                        className="order__receiver--copy"
+                        type="button"
+                        onClick={handleCopy}
+                    >
+                        Copy
+                    </button>
+                </div>
+
+                <InputLabel
+                    label="Transaction TXID or Transaction HASH"
+                    labelClassName="order__form--label"
+                    Note={
+                        <p>
+                            Note:{" "}
+                            <span className="danger">
+                                It is forbidden to use the TXID or HASH of other
+                                users, ant the account will be frozen if found
+                            </span>
+                        </p>
+                    }
+                    others={{ className: "order__form-input" }}
+                    type="number"
+                    id={order!}
+                    name="hash"
+                    onChange={handleChange}
+                    value={values.hash}
+                    placeholder="* Please input the number of USDT to be traded"
+                    aria-label={`amount to ${order}`}
+                />
                 <button
                     onClick={handleOrder}
                     type="submit"
@@ -78,21 +151,6 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
                 >
                     Confirm
                 </button>
-                {/* <div>
-                    <label htmlFor="">Receiver&apos;s address</label>
-                    <Input
-                        others={{ className: "order__form-input" }}
-                        type="number"
-                        id={order!}
-                        name={order!}
-                        onChange={(e) => {
-                            setValue(e.target.value);
-                        }}
-                        value={value}
-                        placeholder="$"
-                        aria-label={`amount to ${order}`}
-                    />
-                </div> */}
             </form>
         </StyledOrderBox>
     );

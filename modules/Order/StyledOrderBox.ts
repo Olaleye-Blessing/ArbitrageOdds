@@ -88,6 +88,7 @@ export const StyledOrderBox = styled.section`
 
             &--li {
                 margin: 1.2rem;
+                margin-left: 0;
             }
 
             &--btn {
@@ -101,6 +102,18 @@ export const StyledOrderBox = styled.section`
                 &:hover {
                     border-color: var(--primary);
                 }
+            }
+        }
+
+        &__receiver {
+            position: relative;
+
+            &--copy {
+                position: absolute;
+                top: 4.2rem;
+                right: 0.2rem;
+                transform: translate(-50%, 0);
+                font-weight: 500;
             }
         }
 

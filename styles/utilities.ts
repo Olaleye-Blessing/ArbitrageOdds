@@ -30,6 +30,7 @@ export const Utilities = createGlobalStyle`
 
     .form {
         &__control {
+            margin-top: 2rem;
             margin-bottom: 2rem;
             max-width: 73.5rem;
 
@@ -79,5 +80,9 @@ export const Utilities = createGlobalStyle`
         padding: 1rem;
         border-radius: 1rem;
         transition: all 0.2s ease-in;
+    }
+
+    .danger {
+        color: brown;
     }
 `;

@@ -13,8 +13,14 @@ export const StyledInput = styled.input`
     border: 0.1rem solid transparent;
     outline: none;
     color: var(--white);
+    caret-color: var(--white);
+    transition: all 0.2s linear;
 
     &::placeholder {
         color: var(--white-2);
+    }
+
+    &:hover {
+        opacity: 0.85;
     }
 `;
