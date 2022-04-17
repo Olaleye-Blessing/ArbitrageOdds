@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import InputLabel from "../../components/Input/InputLabel";
 import DefaultInput from "../../components/Input/DefaultInput";
 import { copyToClipBoard } from "../../utils/copytoClipboard";
+import InputFile from "../../components/Input/InputFile";
 
 interface IOrderBox {
     order: Order;
@@ -22,6 +23,7 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
     const [values, setValues] = useState({
         hash: "",
         amount: "",
+        screenshot: "",
     });
 
     const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -46,10 +48,14 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
             return toast.error("Please fill all fields");
 
         toast.success(`amount to ${order}: ${values.amount}`);
-        setValues({ hash: "", amount: "" });
+        setValues({ hash: "", amount: "", screenshot: "" });
     };
 
     let suggestedAmount = [30, 50, 100, 500, 1_000, 5_000, 10_000, 50_000];
+
+    const handleScreenshotChanged = (screenshot: string) => {
+        setValues((prev) => ({ ...prev, screenshot }));
+    };
 
     return (
         <StyledOrderBox>
@@ -136,13 +142,18 @@ const OrderBox: FC<IOrderBox> = ({ order }) => {
                         </p>
                     }
                     others={{ className: "order__form-input" }}
-                    type="number"
-                    id={order!}
+                    type="text"
+                    id="hash"
                     name="hash"
                     onChange={handleChange}
                     value={values.hash}
-                    placeholder="* Please input the number of USDT to be traded"
-                    aria-label={`amount to ${order}`}
+                    placeholder="*Transaction TXID or Transaction HASH"
+                    aria-label="Transaction TXID or Transaction HASH"
+                />
+                <InputFile
+                    label="Upload a screenshot"
+                    setImage={handleScreenshotChanged}
+                    img={values.screenshot}
                 />
                 <button
                     onClick={handleOrder}
