@@ -4,9 +4,10 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import ROI from "./ROI";
 import Review from "./Review";
 import { StyledSliderSection } from "./Styles";
+import Game from "./Game";
 
 const Slider: FC = () => {
-    let sliderItems = [Review, ROI, ROI];
+    let sliderItems = [Review, ROI, Game];
 
     return (
         <StyledSliderSection className="dynamic">

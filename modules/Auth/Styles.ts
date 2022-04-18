@@ -105,3 +105,20 @@ export const StyledReviewSection = styled.section`
         }
     }
 `;
+
+export const StyledGameSection = styled.section`
+    background: var(--primary);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p {
+        font-size: clamp(2.2rem, calc(4vw + 1em), 4rem);
+        font-weight: bold;
+    }
+`;
